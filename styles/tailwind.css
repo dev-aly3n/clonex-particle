@@ -1,0 +1,133 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+
+
+
+
+/* chrome */
+*::-webkit-scrollbar {
+  width: 0.5rem;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+}
+/* firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: darkgray;
+}
+.link-inside-text {
+  @apply !text-primary-50 !underline hover:!text-secondary-50 duration-500; 
+}
+
+@layer base {
+  html {
+    @apply !scroll-smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-[#191D1F] text-black max-w-screen-2xl mx-auto;
+  }
+
+  svg{
+    overflow: visible;
+  }
+
+  h1 {
+  }
+  h2 {
+  }
+  h3 {
+
+  }
+  h4 {
+
+  }
+  h5 {
+
+  }
+  h6 {
+
+  }
+
+  span > img {
+    @apply pointer-events-none;
+  }
+
+
+
+  video::-webkit-media-controls-overlay-play-button {
+    display: none;
+  }
+  video::-webkit-media-controls-overlay-pause-button {
+    display: none;
+  }
+  video::-webkit-media-controls-loading-panel {
+    display: none;
+  }
+
+  ::selection {
+    @apply bg-primary-30 text-primary-95 ;
+  }
+}
+
+@layer components {
+  /* to disapear the blue highligting on mobile ontouch */
+  .no-select-a-tag {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .no-select-a-tag:focus {
+    outline: none !important;
+  }
+
+
+
+}
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  *:focus {
+    outline: none !important;
+  }
+
+
+.inner-image-no-max-width > span > img {
+@apply max-w-none;
+}
+
+
+
+html {
+  overflow-y: scroll;
+}
+
+@supports (scrollbar-gutter: stable) {
+  html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}
+
+@supports (overflow-y: overlay) {
+  html {
+    overflow-y: overlay;
+    scrollbar-gutter: auto;
+  }
+}
